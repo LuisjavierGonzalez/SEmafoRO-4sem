@@ -7,9 +7,9 @@
     </div>
 
     <v-col class="button-column">
-      <v-btn @click="changeLight('red')" class="red-button">Rojo</v-btn>
-      <v-btn @click="changeLight('yellow')" class="yellow-button">Amarillo</v-btn>
-      <v-btn @click="changeLight('green')" class="green-button">Verde</v-btn>
+      <button @click="changeLight('red')" class="color-button red-button">Rojo</button>
+      <button @click="changeLight('yellow')" class="color-button yellow-button">Amarillo</button>
+      <button @click="changeLight('green')" class="color-button green-button">Verde</button>
     </v-col>
   </v-row>
 </template>
@@ -45,33 +45,39 @@ function changeLight(color) {
   box-shadow: 0 8px 25px rgba(0, 0, 0, 0.7); 
 }
 
-.light {
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5); 
-}
-
-.light.active {
-  box-shadow: 0 0 30px rgba(0, 0, 0, 0.8); 
-}
-
-
 .button-column {
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.red-button {
-  background-color: #e53935;
+.color-button {
+  padding: 10px 20px; 
+  border: none;
+  border-radius: 20px; 
+  font-weight: bold;
+  cursor: pointer;
   color: white;
+  width: 80px;
+  text-align: center;
+  transition: transform 0.2s;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); 
+}
+
+.color-button:hover {
+  transform: scale(1.05); 
+}
+
+.red-button {
+  background-color: #e53935; 
 }
 
 .yellow-button {
-  background-color: #ffeb3b;
-  color: black;
+  background-color: #ffeb3b; 
+  color: black; 
 }
 
 .green-button {
-  background-color: #4caf50;
-  color: white;
+  background-color: #4caf50; 
 }
 </style>
